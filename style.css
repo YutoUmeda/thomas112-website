@@ -1,7 +1,7 @@
 :root{
   --deep-teal:#172E2D;
   --charcoal:#252A29;
-  --off-white:#F4F5F2;
+  --off-white:#F5F5F0;
   --sage-gray:#B8C4BD;
   --muted-lime:#C4D85A;
   --white:#fff;
@@ -65,6 +65,9 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--muted-lime);outline
 .hero-actions{display:flex;align-items:center;gap:34px;margin-top:34px}
 .hero-actions .button{min-width:200px}
 .hero-index{position:absolute;right:5.5vw;bottom:42px;font-family:var(--serif);font-size:13px;letter-spacing:.16em;color:rgba(244,245,242,.75)}
+.hero-scroll{position:absolute;z-index:1;left:50%;bottom:34px;width:max-content;transform:translateX(-50%);display:flex;align-items:center;gap:10px;color:rgba(244,245,242,.78);font-size:9px;letter-spacing:.2em;transition:color .2s ease}
+.hero-scroll span{color:var(--muted-lime);font-size:14px;transition:transform .2s ease}
+.hero-scroll:hover{color:var(--white)}.hero-scroll:hover span{transform:translateY(3px)}
 @keyframes hero-settle{from{transform:scale(1.035);opacity:.8}to{transform:scale(1);opacity:1}}
 
 /* About / editorial split */
@@ -135,6 +138,10 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--muted-lime);outline
 .contact-cta h2{font-size:clamp(26px,3.2vw,43px);margin-top:0}
 .contact-word{font-family:var(--serif);font-size:clamp(52px,9vw,118px);line-height:.95;letter-spacing:-.04em;color:var(--sage-gray);margin:0 0 28px}
 .contact-cta .button{min-width:220px;margin-bottom:5px}
+.contact-cta-actions{display:flex;flex-direction:column;align-items:flex-start;gap:20px}
+.contact-cta-phone{font-family:var(--serif);font-size:clamp(24px,2.5vw,34px);letter-spacing:.01em;white-space:nowrap;transition:color .2s ease}
+.contact-cta-phone span{font-family:var(--sans);font-size:15px;color:var(--muted-lime);margin-left:8px}
+.contact-cta-phone:hover{color:var(--muted-lime)}
 
 /* Interior page openings */
 .page-intro{min-height:410px;padding:90px clamp(24px,9vw,136px);display:flex;justify-content:space-between;align-items:center;position:relative;overflow:hidden}
@@ -252,7 +259,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--muted-lime);outline
  html{scroll-padding-top:70px}
  body{font-size:14px;padding-bottom:67px}
  .site-header{height:70px;padding:0 20px}
- .wordmark-main{font-size:18px}.wordmark-sub{font-size:7px}
+ .wordmark-main{font-size:18px}.wordmark-sub{font-size:8px}
  .menu-toggle{display:flex;width:42px;height:42px;border:1px solid #cbd2cc;background:transparent;align-items:center;justify-content:center;flex-direction:column;gap:5px;z-index:25;cursor:pointer}
  .menu-toggle span{display:block;width:17px;height:1px;background:var(--deep-teal);transition:transform .2s ease}
  .menu-toggle[aria-expanded=true] span:first-child{transform:translateY(3px) rotate(45deg)}
@@ -269,18 +276,19 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--muted-lime);outline
  .section-heading-main h2,.about-title h2,.process-layout h2,.company-strip h2{font-size:38px}
  .section-heading>.text-arrow{margin-top:22px}
  .home-hero{height:auto;min-height:calc(100svh - 70px);min-height:max(650px,calc(100svh - 70px));align-items:center}
- .hero-image{object-position:52% center}
+ .hero-image{object-position:72% center}
  .hero-shade{background:linear-gradient(90deg,rgba(14,37,35,.72),rgba(20,42,39,.48)),linear-gradient(0deg,rgba(12,28,27,.38),transparent 62%)}
  .hero-content{width:auto;margin:0;padding:56px 24px 82px}
- .hero-brand{font-size:14px;margin-bottom:12px}
- .home-hero .eyebrow{font-size:11px;letter-spacing:.09em;margin-bottom:19px}
+ .hero-brand{font-size:15px;margin-bottom:12px}
+ .home-hero .eyebrow{font-size:12px;letter-spacing:.075em;margin-bottom:19px}
  .hero-title{font-size:clamp(32px,8.6vw,40px);line-height:1.48;letter-spacing:.015em;margin-bottom:16px}
  .hero-lead{font-size:12px;line-height:1.9}
  .desktop-only{display:none}
  .hero-actions{align-items:flex-start;flex-direction:column;gap:17px;margin-top:24px}
  .hero-actions .button{min-width:190px;min-height:49px}
  .hero-actions .text-arrow{font-size:11px;padding:7px 0}
- .hero-index{right:22px;bottom:30px;font-size:11px}
+ .hero-index{display:none}
+ .hero-scroll{top:82%;right:22px;bottom:auto;left:auto;width:max-content;transform:none;font-size:9px}
   .about-section>.section-meta,.business-section>.section-heading,.process-section>.section-meta,.values-section>.section-meta,.philosophy-section>.section-meta,.company-info-section>.section-meta,.contact-form-section>.section-meta,.policy-section>.section-meta{margin-bottom:32px}
  .about-grid{display:flex;flex-direction:column;align-items:stretch;gap:17px}
  .about-title{padding-bottom:0}.about-title h2{font-size:43px}.about-title .eyebrow{margin-bottom:10px}
@@ -291,7 +299,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--muted-lime);outline
  .business-item figure,.business-item-large figure,.business-item-tall figure,.business-item-offset figure,.business-item-wide figure{height:auto;aspect-ratio:1.28}
  .business-item-tall figure{aspect-ratio:1.05}
  .business-item-copy{padding-top:14px;grid-template-columns:35px 1fr;column-gap:10px;margin-top:10px}
- .business-no{font-size:17px}.business-en{font-size:8px}.business-item h3{font-size:17px}.business-link{top:14px}
+ .business-no{font-size:17px}.business-en{font-size:9px}.business-item h3{font-size:17px}.business-link{top:14px}
  .process-section>.section-meta{margin-bottom:27px}
  .process-layout{display:block}.process-layout h2{font-size:34px}.section-intro{font-size:12px;margin:14px 0 23px}
  .process-list li{grid-template-columns:34px 1fr 16px;padding:16px 0;gap:10px}.process-list h3{font-size:14px}.process-list p{font-size:10px}
@@ -302,7 +310,9 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--muted-lime);outline
  .contact-cta{display:block;padding:70px 24px}
  .contact-word{font-size:72px;margin-bottom:23px}
  .contact-cta h2{font-size:25px;line-height:1.65}
- .contact-cta .button{margin-top:25px;min-width:195px}
+ .contact-cta-actions{margin-top:27px;gap:15px}
+ .contact-cta-phone{font-size:25px}
+ .contact-cta .button{margin-top:0;min-width:195px}
  .page-intro{min-height:350px;padding:70px 24px}
  .company-page-hero{display:flex;flex-direction:column;align-items:stretch;padding:0;min-height:0}.company-page-hero .page-intro-inner{padding:62px 24px 40px}.company-hero-visual{height:240px;min-height:240px}.company-hero-visual img{height:240px;min-height:240px;object-position:center 52%}
  .page-intro h1{font-size:56px}
@@ -320,7 +330,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--muted-lime);outline
  .philosophy-content h2{font-size:42px;line-height:1.5}.philosophy-content>p:last-child{font-size:12px}
  .values-content{display:block}.values-content article+article{margin-top:42px}.values-content article h2{font-size:19px}
  .values-content li{font-size:12px;padding:14px 0;grid-template-columns:25px 1fr;gap:8px}
- .company-info-content>.eyebrow{font-size:9px}.company-info-content>h2{font-size:31px;margin-bottom:22px}
+ .company-info-content>.eyebrow{font-size:10px}.company-info-content>h2{font-size:31px;margin-bottom:22px}
  .info-list{grid-template-columns:100px 1fr}.info-list dt,.info-list dd{font-size:11px;padding:13px 7px;line-height:1.9;overflow-wrap:anywhere}
  .history-heading{font-size:22px!important;margin:45px 0 15px!important}
  .history-list{grid-template-columns:100px 1fr}
@@ -338,7 +348,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--muted-lime);outline
  .footer-main{display:flex;flex-direction:column;gap:30px;padding-bottom:34px}
  .footer-identity>p,.footer-company p{font-size:10px;margin-top:15px}
  .footer-links{width:100%;grid-template-columns:1fr 1fr;gap:12px}
- .footer-bottom{font-size:8px;letter-spacing:.08em}
+ .footer-bottom{font-size:9px;letter-spacing:.08em}
  .mobile-contact{display:grid;grid-template-columns:1fr 1fr;gap:8px;position:fixed;z-index:30;left:0;right:0;bottom:0;padding:8px 12px calc(8px + env(safe-area-inset-bottom));background:rgba(244,245,242,.96);backdrop-filter:blur(12px);box-shadow:0 -5px 20px rgba(23,46,45,.12)}
  .mobile-contact a{min-height:47px;padding:0 12px;display:flex;align-items:center;justify-content:center;gap:11px;background:var(--deep-teal);color:var(--off-white);font-size:11px;font-weight:600}
  .mobile-contact a:first-child{background:#dfe5df;color:var(--deep-teal)}
