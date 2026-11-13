@@ -227,6 +227,36 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--muted-lime);outline
 .draft-notice strong{font-size:12px}
 .draft-notice p{font-size:11px;line-height:1.9;color:var(--muted);margin:7px 0 0}
 
+/* Recruitment page */
+.recruit-hero{min-height:420px}
+.recruit-hero .page-intro-inner{max-width:var(--measure)}
+.recruit-hero .page-lead{font-size:clamp(24px,3vw,40px);line-height:1.65}
+.recruit-hero .page-intro-number{font-size:clamp(42px,8vw,112px);letter-spacing:.06em}
+.recruit-intro,.recruit-values{display:grid;grid-template-columns:190px 1fr;gap:5vw;background:var(--off-white)}
+.recruit-intro-copy,.recruit-values-copy{max-width:800px}
+.recruit-intro-copy h2,.recruit-values-copy h2{font-size:clamp(34px,4.5vw,58px);font-weight:500;line-height:1.5;margin:0 0 22px}
+.recruit-intro-copy>p:last-of-type,.recruit-values-copy>p:not(.eyebrow){font-size:14px;line-height:2.2;color:var(--muted);max-width:700px}
+.recruit-work{display:grid;grid-template-columns:190px 1fr;gap:5vw;background:#e9ede9}
+.recruit-section-heading{grid-column:2;grid-row:1}
+.recruit-section-heading h2{font-size:clamp(32px,4vw,50px);font-weight:500;margin:0 0 10px}
+.recruit-section-heading>p:last-child{font-size:13px;line-height:2;color:#59645e;max-width:620px}
+.recruit-work-list{grid-column:2;grid-row:2;list-style:none;padding:0;margin:18px 0 0;border-top:1px solid rgba(23,46,45,.4)}
+.recruit-work-list li{display:grid;grid-template-columns:52px 1fr;border-bottom:1px solid rgba(23,46,45,.3);align-items:center;min-height:68px;gap:15px}
+.recruit-work-list li>span{font-family:var(--serif);font-size:17px;color:#71843a}
+.recruit-work-list a{display:flex;justify-content:space-between;align-items:center;font-size:16px}
+.recruit-work-list b{color:#71843a;font-size:18px;transition:transform .2s ease}
+.recruit-work-list a:hover b{transform:translate(3px,-3px)}
+.recruit-values{background:var(--sage-gray)}
+.recruit-values-copy .text-arrow{margin-top:16px}
+.recruit-contact{background:var(--deep-teal);color:var(--off-white);padding:clamp(65px,8vw,110px) clamp(24px,9vw,136px)}
+.recruit-contact .eyebrow{color:var(--muted-lime)}
+.recruit-contact h2{font-size:clamp(32px,4vw,52px);font-weight:500;line-height:1.5;margin:0 0 18px}
+.recruit-contact>p:not(.eyebrow){font-size:13px;line-height:2.1;color:#d2dad4;max-width:760px}
+.recruit-contact-actions{display:flex;align-items:center;gap:34px;margin-top:28px;flex-wrap:wrap}
+.recruit-phone{display:flex;flex-direction:column;font-family:var(--serif);font-size:26px;gap:3px}
+.recruit-phone span{font-family:var(--sans);font-size:11px;color:#d2dad4}
+.recruit-contact .button{min-width:235px}
+
 /* Footer and mobile action bar */
 .site-footer{background:var(--charcoal);color:var(--off-white);padding:58px clamp(24px,7vw,104px) 22px}
 .footer-main{max-width:var(--measure);margin:0 auto;display:grid;grid-template-columns:1.1fr .8fr 1fr;gap:5vw;padding-bottom:52px}
@@ -254,6 +284,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--muted-lime);outline
  .contact-form-section,.company-info-section,.philosophy-section,.values-section,.policy-section{grid-template-columns:145px 1fr;gap:4vw}
  .contact-form-layout{grid-template-columns:1fr;gap:26px}
  .footer-main{grid-template-columns:1fr 1fr}.footer-links{grid-column:1/-1}
+ .recruit-intro,.recruit-values,.recruit-work{grid-template-columns:145px 1fr;gap:4vw}
 }
 @media(max-width:640px){
  html{scroll-padding-top:70px}
@@ -314,6 +345,9 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--muted-lime);outline
  .contact-cta-phone{font-size:25px}
  .contact-cta .button{margin-top:0;min-width:195px}
  .page-intro{min-height:350px;padding:70px 24px}
+ .recruit-hero{min-height:390px}
+ .recruit-hero .page-intro-inner{padding:64px 24px}
+ .recruit-hero .page-intro-number{font-size:46px;right:20px;bottom:18px}
  .company-page-hero{display:flex;flex-direction:column;align-items:stretch;padding:0;min-height:0}.company-page-hero .page-intro-inner{padding:62px 24px 40px}.company-hero-visual{height:240px;min-height:240px}.company-hero-visual img{height:240px;min-height:240px;object-position:center 52%}
  .page-intro h1{font-size:56px}
  .page-lead{font-size:15px;line-height:1.9}
@@ -344,6 +378,20 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--muted-lime);outline
  .google-form{margin-top:28px;padding:6px}.google-form iframe{height:1450px}
  .form-fallback{font-size:10px}
  .policy-content>p{font-size:12px}.policy-content h2{font-size:18px;margin-top:27px}
+ .recruit-intro,.recruit-values,.recruit-work{display:block;padding:68px 23px}
+ .recruit-intro .section-meta,.recruit-values .section-meta,.recruit-work .section-meta{margin-bottom:28px}
+ .recruit-intro-copy h2,.recruit-values-copy h2{font-size:36px;line-height:1.55;margin-bottom:16px}
+ .recruit-intro-copy>p:last-of-type,.recruit-values-copy>p:not(.eyebrow){font-size:12px;line-height:2.05}
+ .recruit-section-heading h2{font-size:32px}
+ .recruit-work-list{margin-top:21px}
+ .recruit-work-list li{grid-template-columns:37px 1fr;min-height:62px;gap:10px}
+ .recruit-work-list a{font-size:13px}
+ .recruit-contact{padding:68px 23px}
+ .recruit-contact h2{font-size:29px}
+ .recruit-contact>p:not(.eyebrow){font-size:12px}
+ .recruit-contact-actions{align-items:flex-start;flex-direction:column;gap:20px}
+ .recruit-phone{font-size:25px}
+ .recruit-contact .button{min-width:220px}
  .site-footer{padding:42px 23px 18px}
  .footer-main{display:flex;flex-direction:column;gap:30px;padding-bottom:34px}
  .footer-identity>p,.footer-company p{font-size:10px;margin-top:15px}
@@ -357,4 +405,4 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--muted-lime);outline
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.motion-ready .reveal{opacity:1;transform:none}}
 @keyframes menu-reveal{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:translateY(0)}}
-@media(max-width:640px){.site-header nav.is-open a{animation:menu-reveal .22s ease both}.site-header nav.is-open a:nth-child(2){animation-delay:.03s}.site-header nav.is-open a:nth-child(3){animation-delay:.06s}}
+@media(max-width:640px){.site-header nav.is-open a{animation:menu-reveal .22s ease both}.site-header nav.is-open a:nth-child(2){animation-delay:.03s}.site-header nav.is-open a:nth-child(3){animation-delay:.06s}.site-header nav.is-open a:nth-child(4){animation-delay:.09s}}
